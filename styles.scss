@@ -1,0 +1,265 @@
+/* ==========================================================
+   Data as Foundation - Custom Quarto Styles (Light/Dark Safe)
+   ----------------------------------------------------------
+   - Wider content (80% viewport)
+   - Book cover on left margin for book pages
+   - Responsive behaviour
+   - Navbar contrast fixes for dark mode
+   - Theme-aware links (incl. Amazon link)
+   - Subtitle visibility in dark mode
+   - Footer styling
+   ========================================================== */
+
+/* ------------------------------
+   Base typography (theme-aware)
+   ------------------------------ */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--bs-body-color);      /* respects light/dark */
+  background: var(--bs-body-bg);    /* respects light/dark */
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--bs-heading-color, var(--bs-body-color));
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+p { margin-bottom: 1rem; }
+.lead { font-size: 1.15rem; }
+
+/* ------------------------------
+   Main content width
+   ------------------------------ */
+main.content {
+  max-width: 80vw;          /* 80% of browser width */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  main.content {
+    max-width: 95vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ------------------------------
+   NAVBAR (top ribbon) contrast
+   ------------------------------ */
+/* Ensure navbar background & border have contrast in both themes */
+.navbar {
+  border-bottom: 1px solid var(--bs-border-color, rgba(0,0,0,.1));
+  backdrop-filter: saturate(180%) blur(4px);
+}
+
+/* Brand and links: theme-aware colours */
+.navbar .navbar-brand,
+.navbar .navbar-brand:focus,
+.navbar .navbar-brand:hover {
+  color: var(--bs-emphasis-color, var(--bs-body-color));
+  text-decoration: none;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: var(--bs-nav-link-color, var(--bs-body-color));
+  font-weight: 500;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+  color: var(--bs-nav-link-hover-color, var(--bs-link-hover-color, #0d6efd));
+  text-decoration: none;
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .show > .nav-link {
+  color: var(--bs-nav-link-hover-color, var(--bs-link-color));
+}
+
+/* Dropdown menus in dark mode */
+.dropdown-menu {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  border: 1px solid var(--bs-border-color);
+}
+
+.dropdown-item {
+  color: var(--bs-body-color);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active {
+  color: var(--bs-body-color);
+  background-color: var(--bs-tertiary-bg, rgba(0,0,0,0.05));
+}
+
+/* Dark-specific navbar tweaks to ensure strong contrast */
+[data-bs-theme="dark"] .navbar {
+  background-color: var(--bs-body-bg); /* keep consistent with page */
+  border-bottom-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .navbar .navbar-brand,
+[data-bs-theme="dark"] .navbar .navbar-nav .nav-link {
+  color: var(--bs-light, #f8f9fa);
+}
+
+[data-bs-theme="dark"] .navbar .navbar-nav .nav-link:hover,
+[data-bs-theme="dark"] .navbar .navbar-nav .nav-link:focus,
+[data-bs-theme="dark"] .navbar .navbar-nav .nav-link.active {
+  color: var(--bs-primary, #66b2ff);
+}
+
+/* ------------------------------
+   Links (site-wide + Amazon link)
+   ------------------------------ */
+a {
+  color: var(--bs-link-color, #0d6efd);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* Make small caption links under images readable */
+.book-cover-left p,
+.book-cover-top p,
+.home-book-cover p {
+  font-size: 0.9rem;
+  color: var(--bs-secondary-color, var(--bs-body-color));
+}
+
+/* Boost link contrast in dark mode */
+[data-bs-theme="dark"] a {
+  color: var(--bs-primary, #66b2ff);
+}
+[data-bs-theme="dark"] a:hover {
+  color: var(--bs-link-hover-color, #a7d3ff);
+}
+
+/* ------------------------------
+   Subtitle visibility (both themes)
+   ------------------------------ */
+.quarto-title-block .quarto-subtitle,
+.quarto-title .subtitle,
+h2.subtitle,
+.subtitle {
+  color: var(--bs-secondary-color, var(--bs-body-color));
+}
+
+[data-bs-theme="dark"] .quarto-title-block .quarto-subtitle,
+[data-bs-theme="dark"] .quarto-title .subtitle,
+[data-bs-theme="dark"] h2.subtitle,
+[data-bs-theme="dark"] .subtitle {
+  color: var(--bs-light-text-emphasis, #e9ecef);
+  opacity: 0.95;
+}
+
+.quarto-title-block .quarto-subtitle,
+.quarto-title .subtitle {
+  font-size: 1.15rem;
+  margin-top: .25rem;
+}
+
+/* ------------------------------
+   Book cover: left margin (book pages)
+   ------------------------------ */
+.book-cover-left {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  z-index: 5;
+  text-align: center;
+}
+
+.book-cover-left img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.book-cover-left img:hover { transform: scale(1.03); }
+
+.book-cover-left p { margin-top: 0.3rem; }
+
+/* Leave space so text does not overlap the image */
+main.content {
+  padding-left: 250px; /* space for cover on book pages */
+}
+
+/* Responsive collapse: image goes inline above text */
+@media (max-width: 991px) {
+  .book-cover-left {
+    position: relative;
+    left: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .book-cover-left img {
+    width: 60%;
+    margin: 0 auto;
+  }
+  main.content {
+    padding-left: 1rem; /* remove reserved gap on small screens */
+  }
+}
+
+/* ------------------------------
+   Home page book cover (if used)
+   ------------------------------ */
+.home-book-cover {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.home-book-cover img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+.home-book-cover img:hover { transform: scale(1.03); }
+
+/* ------------------------------
+   Grid helpers
+   ------------------------------ */
+.grid {
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------
+   Footer
+   ------------------------------ */
+footer, .page-footer {
+  font-size: 0.9rem;
+  color: var(--bs-secondary-color, var(--bs-body-color));
+  border-top: 1px solid var(--bs-border-color, #ddd);
+  padding-top: 0.75rem;
+  margin-top: 2rem;
+}
+
+.page-footer a {
+  color: var(--bs-link-color);
+}
+.page-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------
+   Images (global)
+   ------------------------------ */
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
