@@ -1,23 +1,13 @@
 /* ==========================================================
-   Data as Foundation - Custom Quarto Styles (Light/Dark Safe)
-   ----------------------------------------------------------
-   - Wider content (80% viewport)
-   - Book cover on left margin for book pages
-   - Responsive behaviour
-   - Navbar contrast fixes for dark mode
-   - Theme-aware links (incl. Amazon link)
-   - Subtitle visibility in dark mode
-   - Footer styling
+   Data as Foundation - Clean Light/Dark Compatible Styles
    ========================================================== */
 
-/* ------------------------------
-   Base typography (theme-aware)
-   ------------------------------ */
+/* ---------- Base Typography ---------- */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.6;
-  color: var(--bs-body-color);      /* respects light/dark */
-  background: var(--bs-body-bg);    /* respects light/dark */
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
 }
 
 h1, h2, h3, h4 {
@@ -30,14 +20,12 @@ h1, h2, h3, h4 {
 p { margin-bottom: 1rem; }
 .lead { font-size: 1.15rem; }
 
-/* ------------------------------
-   Main content width
-   ------------------------------ */
+/* ---------- Layout Width ---------- */
 main.content {
-  max-width: 80vw;          /* 80% of browser width */
+  max-width: 80vw;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
+  padding-left: 250px;  /* space for left cover image */
   padding-right: 2rem;
   position: relative;
 }
@@ -50,40 +38,48 @@ main.content {
   }
 }
 
-/* ------------------------------
-   NAVBAR (top ribbon) contrast
-   ------------------------------ */
-/* Ensure navbar background & border have contrast in both themes */
+/* ---------- Navbar Styling ---------- */
+
+/* Base navbar background and border */
 .navbar {
+  background-color: var(--bs-body-bg) !important;
   border-bottom: 1px solid var(--bs-border-color, rgba(0,0,0,.1));
-  backdrop-filter: saturate(180%) blur(4px);
 }
 
-/* Brand and links: theme-aware colours */
-.navbar .navbar-brand,
-.navbar .navbar-brand:focus,
-.navbar .navbar-brand:hover {
-  color: var(--bs-emphasis-color, var(--bs-body-color));
+/* Brand title */
+.navbar .navbar-brand {
+  font-weight: 700;
   text-decoration: none;
 }
 
-.navbar .navbar-nav .nav-link {
-  color: var(--bs-nav-link-color, var(--bs-body-color));
-  font-weight: 500;
+/* Light theme brand and link colours */
+[data-bs-theme="light"] .navbar .navbar-brand,
+[data-bs-theme="light"] .navbar .nav-link {
+  color: #0b3b46 !important;
 }
 
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link:focus {
-  color: var(--bs-nav-link-hover-color, var(--bs-link-hover-color, #0d6efd));
-  text-decoration: none;
+[data-bs-theme="light"] .navbar .nav-link:hover,
+[data-bs-theme="light"] .navbar .nav-link:focus {
+  color: #005f73 !important;
 }
 
-.navbar .navbar-nav .nav-link.active,
-.navbar .navbar-nav .show > .nav-link {
-  color: var(--bs-nav-link-hover-color, var(--bs-link-color));
+/* Dark theme brand and link colours */
+[data-bs-theme="dark"] .navbar {
+  background-color: #121212 !important;
+  border-bottom-color: #222;
 }
 
-/* Dropdown menus in dark mode */
+[data-bs-theme="dark"] .navbar .navbar-brand,
+[data-bs-theme="dark"] .navbar .nav-link {
+  color: #f8f9fa !important;
+}
+
+[data-bs-theme="dark"] .navbar .nav-link:hover,
+[data-bs-theme="dark"] .navbar .nav-link:focus {
+  color: #66b2ff !important;
+}
+
+/* Dropdowns */
 .dropdown-menu {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
@@ -97,79 +93,52 @@ main.content {
 .dropdown-item:hover,
 .dropdown-item:focus,
 .dropdown-item.active {
-  color: var(--bs-body-color);
   background-color: var(--bs-tertiary-bg, rgba(0,0,0,0.05));
+  color: var(--bs-body-color);
 }
 
-/* Dark-specific navbar tweaks to ensure strong contrast */
-[data-bs-theme="dark"] .navbar {
-  background-color: var(--bs-body-bg); /* keep consistent with page */
-  border-bottom-color: var(--bs-border-color);
-}
-
-[data-bs-theme="dark"] .navbar .navbar-brand,
-[data-bs-theme="dark"] .navbar .navbar-nav .nav-link {
-  color: var(--bs-light, #f8f9fa);
-}
-
-[data-bs-theme="dark"] .navbar .navbar-nav .nav-link:hover,
-[data-bs-theme="dark"] .navbar .navbar-nav .nav-link:focus,
-[data-bs-theme="dark"] .navbar .navbar-nav .nav-link.active {
-  color: var(--bs-primary, #66b2ff);
-}
-
-/* ------------------------------
-   Links (site-wide + Amazon link)
-   ------------------------------ */
+/* ---------- Links (including Amazon) ---------- */
 a {
-  color: var(--bs-link-color, #0d6efd);
+  color: var(--bs-link-color, #0b3b46);
   text-decoration: none;
+  font-weight: 500;
 }
-a:hover { text-decoration: underline; }
 
-/* Make small caption links under images readable */
+a:hover {
+  color: var(--bs-link-hover-color, #005f73);
+  text-decoration: underline;
+}
+
+[data-bs-theme="dark"] a {
+  color: #66b2ff;
+}
+
+[data-bs-theme="dark"] a:hover {
+  color: #a7d3ff;
+}
+
+/* Small caption text under cover image */
 .book-cover-left p,
-.book-cover-top p,
 .home-book-cover p {
   font-size: 0.9rem;
   color: var(--bs-secondary-color, var(--bs-body-color));
 }
 
-/* Boost link contrast in dark mode */
-[data-bs-theme="dark"] a {
-  color: var(--bs-primary, #66b2ff);
-}
-[data-bs-theme="dark"] a:hover {
-  color: var(--bs-link-hover-color, #a7d3ff);
-}
-
-/* ------------------------------
-   Subtitle visibility (both themes)
-   ------------------------------ */
-.quarto-title-block .quarto-subtitle,
-.quarto-title .subtitle,
-h2.subtitle,
-.subtitle {
-  color: var(--bs-secondary-color, var(--bs-body-color));
-}
-
-[data-bs-theme="dark"] .quarto-title-block .quarto-subtitle,
-[data-bs-theme="dark"] .quarto-title .subtitle,
-[data-bs-theme="dark"] h2.subtitle,
-[data-bs-theme="dark"] .subtitle {
-  color: var(--bs-light-text-emphasis, #e9ecef);
-  opacity: 0.95;
-}
-
+/* ---------- Subtitle Visibility ---------- */
 .quarto-title-block .quarto-subtitle,
 .quarto-title .subtitle {
+  color: var(--bs-secondary-color, var(--bs-body-color));
   font-size: 1.15rem;
   margin-top: .25rem;
 }
 
-/* ------------------------------
-   Book cover: left margin (book pages)
-   ------------------------------ */
+[data-bs-theme="dark"] .quarto-title-block .quarto-subtitle,
+[data-bs-theme="dark"] .quarto-title .subtitle {
+  color: #e9ecef;
+  opacity: 0.95;
+}
+
+/* ---------- Book Cover (Left Margin) ---------- */
 .book-cover-left {
   position: absolute;
   top: 1.5rem;
@@ -181,7 +150,7 @@ h2.subtitle,
 .book-cover-left img {
   width: 200px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
   transition: transform 0.2s ease;
 }
 
@@ -189,12 +158,7 @@ h2.subtitle,
 
 .book-cover-left p { margin-top: 0.3rem; }
 
-/* Leave space so text does not overlap the image */
-main.content {
-  padding-left: 250px; /* space for cover on book pages */
-}
-
-/* Responsive collapse: image goes inline above text */
+/* Responsive behaviour */
 @media (max-width: 991px) {
   .book-cover-left {
     position: relative;
@@ -202,18 +166,18 @@ main.content {
     text-align: center;
     margin-bottom: 1rem;
   }
+
   .book-cover-left img {
     width: 60%;
     margin: 0 auto;
   }
+
   main.content {
-    padding-left: 1rem; /* remove reserved gap on small screens */
+    padding-left: 1rem;
   }
 }
 
-/* ------------------------------
-   Home page book cover (if used)
-   ------------------------------ */
+/* ---------- Home Page Cover (if needed) ---------- */
 .home-book-cover {
   text-align: center;
   margin-top: 2rem;
@@ -223,23 +187,13 @@ main.content {
 .home-book-cover img {
   width: 250px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
   transition: transform 0.2s ease;
 }
+
 .home-book-cover img:hover { transform: scale(1.03); }
 
-/* ------------------------------
-   Grid helpers
-   ------------------------------ */
-.grid {
-  align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* ------------------------------
-   Footer
-   ------------------------------ */
+/* ---------- Footer ---------- */
 footer, .page-footer {
   font-size: 0.9rem;
   color: var(--bs-secondary-color, var(--bs-body-color));
@@ -249,15 +203,21 @@ footer, .page-footer {
 }
 
 .page-footer a {
-  color: var(--bs-link-color);
+  color: var(--bs-link-color, #0b3b46);
 }
+
 .page-footer a:hover {
   text-decoration: underline;
 }
 
-/* ------------------------------
-   Images (global)
-   ------------------------------ */
+/* ---------- Utility Grids ---------- */
+.grid {
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Image Defaults ---------- */
 img {
   max-width: 100%;
   height: auto;
