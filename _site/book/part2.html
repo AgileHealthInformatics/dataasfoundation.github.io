@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="../styles.scss">
@@ -297,18 +298,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../posts/index.html"> 
-<span class="menu-text">Articles</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../initiatives.html"> 
-<span class="menu-text">Initiatives</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../events.html"> 
-<span class="menu-text">Events</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -347,23 +336,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="grid">
-<div class="g-col-12 g-col-md-7">
+<div class="book-cover-left">
+<a href="https://amzn.eu/d/enJozBL" target="_blank"> <img src="../images/cover.png" alt="Data as Foundation book cover"> </a>
+<p>
+<a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+</p>
+</div>
 <p>This part defines the core disciplines needed to turn fragmented records into a reliable organisational asset.</p>
 <p>First, it distinguishes <strong>data governance</strong> from <strong>information governance</strong>. The latter ensures lawful, secure handling; the former creates the conditions for <em>use</em>: shared definitions, ownership and stewardship, quality standards, metadata management, and master data for patients, providers and places. When organisations conflate the two, they achieve compliance but leave value on the table.</p>
 <p>Second, it reframes <strong>data quality</strong> as <strong>fitness for purpose</strong> across multiple dimensions—accuracy, completeness, consistency, timeliness, uniqueness and validity. Different uses demand different thresholds: bedside decision-making needs currency and completeness; research needs consistent definitions, provenance and cohort clarity. Quality is dynamic, evolving as data travels through systems; therefore monitoring must be continuous, not a one-off cleanse.</p>
 <p>Third, it elevates <strong>metadata</strong> from documentation to <strong>semantic infrastructure</strong>. Descriptive definitions, structural relationships, administrative ownership, contextual capture (method, setting, units), and quality annotations together preserve meaning as data moves. Process models show metadata being created and consumed at every stage—from planning and capture to processing, analysis and sharing. Mature organisations progress from ad-hoc spreadsheets to <strong>metadata registries</strong> that drive validation, mapping and lineage.</p>
 <p>Across these chapters, the practical message is consistent: make governance explicit (with a CDO and domain stewards), define and publish enterprise glossaries, adopt standards deliberately (and profile them), and embed quality/metadata checks into workflows. Do this and the organisation builds a reusable substrate for analytics, population health, research and AI—without reinventing the wheel each time.</p>
-</div>
-<div class="g-col-12 g-col-md-5 text-center">
-<div class="quarto-figure quarto-figure-center" style="border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
-<figure class="figure">
-<p><img src="../images/cover.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Data as Foundation book cover</figcaption>
-</figure>
-</div>
-</div>
-</div>
 
 
 
@@ -454,7 +437,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/AgileHealthInformatics\.github\.io\/dataasfoundation\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -799,4 +782,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

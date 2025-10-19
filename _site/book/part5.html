@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="../styles.scss">
@@ -297,18 +298,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../posts/index.html"> 
-<span class="menu-text">Articles</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../initiatives.html"> 
-<span class="menu-text">Initiatives</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../events.html"> 
-<span class="menu-text">Events</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -347,22 +336,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="grid">
-<div class="g-col-12 g-col-md-7">
+<div class="book-cover-left">
+<a href="https://amzn.eu/d/enJozBL" target="_blank"> <img src="../images/cover.png" alt="Data as Foundation book cover"> </a>
+<p>
+<a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+</p>
+</div>
 <p>This part connects foundations to the frontier. It starts with <strong>Foundations for AI</strong>: trustworthy systems require governed data, explicit semantics, lineage, and human-in-the-loop oversight. Generative tools add capability but increase the need for documented context, prompt/response traceability, and model risk management aligned to emerging standards.</p>
 <p>Next is <strong>Data Management Maturity</strong>. Digital maturity (features, adoption) is not the same as capability maturity (definitions, stewardship, quality, metadata, lifecycle). A practical maturity model lets organisations baseline where they are, prioritise gaps, and invest sequentially—often starting with stewardship, registries, and quality services that unlock downstream value faster than another app rollout.</p>
 <p>Finally, <strong>The Cultural Shift</strong>. Durable change is behavioural: moving from ownership to <strong>stewardship</strong>, from gatekeeping to <strong>clarity</strong>, and from individual heroics to <strong>systematic improvement</strong>. Leaders signal priorities by funding foundations, publishing definitions, and celebrating quality wins. Literacy matters too: clinicians and managers don’t need to be ontologists, but they do need shared language about meaning, quality and risk.</p>
 <p>The message is hopeful: with foundations in place, AI augments clinical judgment, analytics informs planning, and information flows safely through a governed ecosystem. Without them, every innovation amplifies inconsistency.</p>
-</div>
-<div class="g-col-12 g-col-md-5 text-center">
-<div class="quarto-figure quarto-figure-center" style="border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
-<figure class="figure">
-<p><img src="../images/cover.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Data as Foundation book cover</figcaption>
-</figure>
-</div>
-</div>
-</div>
 
 
 
@@ -453,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/AgileHealthInformatics\.github\.io\/dataasfoundation\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -798,4 +781,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

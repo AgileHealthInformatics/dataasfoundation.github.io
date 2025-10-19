@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="styles.scss">
@@ -344,9 +345,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="book-cover-left">
-<a href="https://amzn.eu/d/enJozBL" target="_blank"> <img src="../images/cover.png" alt="Data as Foundation book cover"> </a>
+<a href="https://amzn.eu/d/enJozBL" target="_blank" rel="noopener"> <img src="images/cover.png" alt="Data as Foundation book cover"> </a>
 <p>
-<a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+<a href="https://amzn.eu/d/enJozBL" target="_blank" rel="noopener">Buy on Amazon</a>
 </p>
 </div>
 <section id="vision" class="level2">
@@ -456,7 +457,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/AgileHealthInformatics\.github\.io\/dataasfoundation\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -801,4 +802,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

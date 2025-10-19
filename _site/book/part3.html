@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="../styles.scss">
@@ -297,18 +298,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../posts/index.html"> 
-<span class="menu-text">Articles</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../initiatives.html"> 
-<span class="menu-text">Initiatives</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../events.html"> 
-<span class="menu-text">Events</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -347,22 +336,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="grid">
-<div class="g-col-12 g-col-md-7">
+<div class="book-cover-left">
+<a href="https://amzn.eu/d/enJozBL" target="_blank"> <img src="../images/cover.png" alt="Data as Foundation book cover"> </a>
+<p>
+<a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+</p>
+</div>
 <p>Here the vocabulary changes. Most so-called “reuse” of clinical data is actually <strong>repurposing</strong>—an active transformation from one context to another. That shift matters. Repurposing requires explicit assessment of original context, designed transformations, validation against the <em>new</em> purpose, and end-to-end provenance.</p>
 <p>The part maps common scenarios: clinical-to-research (narrative to variables, cohort definition, de-identification); admin-to-quality (reinterpreting billing codes, aligning timestamps to clinical workflow); individual-to-population (aggregation, geocoding, enrichment with social data); and clinical-to-AI (labeling, bias checks, representativeness). Each demands different quality thresholds and exposes hidden biases if context is missing.</p>
 <p>It then argues that <strong>data is a dynamic asset</strong>. Its value appreciates through use: relationships are formed, interpretations layered, quality refined, and metadata enriched. Treating data as “at rest” underestimates both risk and opportunity. Governance must therefore be <strong>evolutionary</strong>—tracking lineage, propagating corrections upstream, and reassessing value and quality as purposes change.</p>
 <p>The takeaway is pragmatic: replace “copy once, use everywhere” with “<strong>transform deliberately, prove fitness</strong>.” Build shared transformation components, document them like code, measure semantic completeness (not just format compliance), and publish provenance with outputs. That’s how organisations move safely from siloed records to a learning system.</p>
-</div>
-<div class="g-col-12 g-col-md-5 text-center">
-<div class="quarto-figure quarto-figure-center" style="border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
-<figure class="figure">
-<p><img src="../images/cover.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Data as Foundation book cover</figcaption>
-</figure>
-</div>
-</div>
-</div>
 
 
 
@@ -453,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/AgileHealthInformatics\.github\.io\/dataasfoundation\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -798,4 +781,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

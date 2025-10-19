@@ -5,12 +5,10 @@ page-layout: article
 ---
 
 <div class="book-cover-left">
-  <a href="https://amzn.eu/d/enJozBL" target="_blank">
-    <img src="../images/cover.png" alt="Data as Foundation book cover">
+  <a href="https://amzn.eu/d/enJozBL" target="_blank" rel="noopener">
+    <img src="images/cover.png" alt="Data as Foundation book cover">
   </a>
-  <p>
-    <a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
-  </p>
+  <p><a href="https://amzn.eu/d/enJozBL" target="_blank" rel="noopener">Buy on Amazon</a></p>
 </div>
 
 

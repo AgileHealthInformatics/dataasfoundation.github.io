@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="../styles.scss">
@@ -297,18 +298,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../posts/index.html"> 
-<span class="menu-text">Articles</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../initiatives.html"> 
-<span class="menu-text">Initiatives</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../events.html"> 
-<span class="menu-text">Events</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -347,22 +336,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="grid">
-<div class="g-col-12 g-col-md-7">
+<div class="book-cover-left">
+<a href="https://amzn.eu/d/enJozBL" target="_blank"> <img src="../images/cover.png" alt="Data as Foundation book cover"> </a>
+<p>
+<a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+</p>
+</div>
 <p>Part IV turns principles into architecture. It reviews the <strong>standards ecosystem</strong>—terminologies, classifications, information models, and exchange specs—and explains why success depends less on picking a winner and more on <strong>profiling, governance and tooling</strong> that keep meaning intact across vendors and regions.</p>
 <p>At the centre is the case for <strong>metadata registries</strong>. A registry is not a passive catalogue; it’s an operational service that holds canonical definitions, value sets, constraints, mappings, ownership, and version history—then <strong>drives</strong> validation, integration and analytics. With a registry, teams resolve meaning questions once and reuse everywhere; without it, every project re-discovers the same ambiguities.</p>
 <p>The part also restores a neglected competency: <strong>process documentation</strong>. Data inherits meaning from workflow. If we can’t describe the process that created the data—actors, steps, controls, and intent—secondary use becomes hazardous. Healthcare-adapted BPM, clinical concept frameworks, and lightweight catalogs make processes inspectable by people and machines, enabling safer automation and AI.</p>
 <p>The architectural posture that emerges is modular and federated: local autonomy with shared semantics; profiles over pure theory; registries and process catalogs as the <strong>connective tissue</strong>; and implementation guides that specify “just enough” to be achievable by real NHS teams. It’s infrastructure you can actually build.</p>
-</div>
-<div class="g-col-12 g-col-md-5 text-center">
-<div class="quarto-figure quarto-figure-center" style="border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
-<figure class="figure">
-<p><img src="../images/cover.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Data as Foundation book cover</figcaption>
-</figure>
-</div>
-</div>
-</div>
 
 
 
@@ -453,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/AgileHealthInformatics\.github\.io\/dataasfoundation\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -798,4 +781,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

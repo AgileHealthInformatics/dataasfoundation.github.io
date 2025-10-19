@@ -3,7 +3,9 @@ project:
 
 website:
   title: "Data as Foundation"
+  site-url: https://AgileHealthInformatics.github.io/dataasfoundation.github.io
   description: "Building healthcare’s invisible infrastructure"
+
   navbar:
     left:
       - text: Home
@@ -36,3 +38,7 @@ format:
       dark: darkly
     toc: true
     css: styles.scss
+    smooth-scroll: true
+
+execute:
+  freeze: auto
