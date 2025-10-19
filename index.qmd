@@ -1,0 +1,35 @@
+---
+title: "Data as Foundation"
+subtitle: "Building healthcare’s invisible infrastructure"
+page-layout: article
+---
+
+<div class="book-cover-left">
+  <a href="https://amzn.eu/d/enJozBL" target="_blank">
+    <img src="../images/cover.png" alt="Data as Foundation book cover">
+  </a>
+  <p>
+    <a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+  </p>
+</div>
+
+
+## Vision
+
+To create healthcare information systems that are transparent, interoperable, and continuously learning.
+*Data as Foundation* envisions a future where every clinical, operational, and research decision is grounded in trusted data — seamlessly connected through shared meaning, robust governance, and intelligent architecture that evolves with healthcare itself.
+
+---
+
+## The Data as Foundation Philosophy
+
+*Data as Foundation* is built on the belief that data is not a by-product of healthcare but its essential infrastructure.
+It proposes five interlocking principles.
+
+- **Meaning before technology**: Shared semantics and metadata allow systems to change without losing understanding.
+- **Governance as capability**: Stewardship of data quality, provenance, and context ensures that information can be safely reused and repurposed.
+- **Architecture as alignment**: Enterprise architecture connects people, processes, and platforms around a coherent model of meaning rather than a single technology stack.
+- **Metadata as infrastructure**: Registries and definitions provide the connective tissue linking data to its clinical and operational context.
+- **Intelligence through integrity**: Trustworthy AI depends on trustworthy data — explainable, traceable, and grounded in evidence.
+
+Together, these principles create an ecosystem where data flows confidently, decisions are transparent, and improvement becomes a property of the system itself.

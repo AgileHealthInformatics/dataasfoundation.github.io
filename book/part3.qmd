@@ -1,0 +1,21 @@
+---
+title: "Part III — Rethinking Healthcare Data"
+page-layout: article
+---
+<div class="book-cover-left">
+  <a href="https://amzn.eu/d/enJozBL" target="_blank">
+    <img src="../images/cover.png" alt="Data as Foundation book cover">
+  </a>
+  <p>
+    <a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+  </p>
+</div>
+
+
+Here the vocabulary changes. Most so-called “reuse” of clinical data is actually **repurposing**—an active transformation from one context to another. That shift matters. Repurposing requires explicit assessment of original context, designed transformations, validation against the *new* purpose, and end-to-end provenance.
+
+The part maps common scenarios: clinical-to-research (narrative to variables, cohort definition, de-identification); admin-to-quality (reinterpreting billing codes, aligning timestamps to clinical workflow); individual-to-population (aggregation, geocoding, enrichment with social data); and clinical-to-AI (labeling, bias checks, representativeness). Each demands different quality thresholds and exposes hidden biases if context is missing.
+
+It then argues that **data is a dynamic asset**. Its value appreciates through use: relationships are formed, interpretations layered, quality refined, and metadata enriched. Treating data as “at rest” underestimates both risk and opportunity. Governance must therefore be **evolutionary**—tracking lineage, propagating corrections upstream, and reassessing value and quality as purposes change.
+
+The takeaway is pragmatic: replace “copy once, use everywhere” with “**transform deliberately, prove fitness**.” Build shared transformation components, document them like code, measure semantic completeness (not just format compliance), and publish provenance with outputs. That’s how organisations move safely from siloed records to a learning system.

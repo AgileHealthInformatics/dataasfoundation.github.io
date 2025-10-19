@@ -1,0 +1,23 @@
+---
+title: "Part II — Fundamentals of Data Management"
+page-layout: article
+---
+<div class="book-cover-left">
+  <a href="https://amzn.eu/d/enJozBL" target="_blank">
+    <img src="../images/cover.png" alt="Data as Foundation book cover">
+  </a>
+  <p>
+    <a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+  </p>
+</div>
+
+
+This part defines the core disciplines needed to turn fragmented records into a reliable organisational asset.
+
+First, it distinguishes **data governance** from **information governance**. The latter ensures lawful, secure handling; the former creates the conditions for *use*: shared definitions, ownership and stewardship, quality standards, metadata management, and master data for patients, providers and places. When organisations conflate the two, they achieve compliance but leave value on the table.
+
+Second, it reframes **data quality** as **fitness for purpose** across multiple dimensions—accuracy, completeness, consistency, timeliness, uniqueness and validity. Different uses demand different thresholds: bedside decision-making needs currency and completeness; research needs consistent definitions, provenance and cohort clarity. Quality is dynamic, evolving as data travels through systems; therefore monitoring must be continuous, not a one-off cleanse.
+
+Third, it elevates **metadata** from documentation to **semantic infrastructure**. Descriptive definitions, structural relationships, administrative ownership, contextual capture (method, setting, units), and quality annotations together preserve meaning as data moves. Process models show metadata being created and consumed at every stage—from planning and capture to processing, analysis and sharing. Mature organisations progress from ad-hoc spreadsheets to **metadata registries** that drive validation, mapping and lineage.
+
+Across these chapters, the practical message is consistent: make governance explicit (with a CDO and domain stewards), define and publish enterprise glossaries, adopt standards deliberately (and profile them), and embed quality/metadata checks into workflows. Do this and the organisation builds a reusable substrate for analytics, population health, research and AI—without reinventing the wheel each time.

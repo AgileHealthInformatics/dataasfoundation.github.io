@@ -1,0 +1,21 @@
+---
+title: "Part V — Enabling the Future of Healthcare"
+page-layout: article
+---
+<div class="book-cover-left">
+  <a href="https://amzn.eu/d/enJozBL" target="_blank">
+    <img src="../images/cover.png" alt="Data as Foundation book cover">
+  </a>
+  <p>
+    <a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+  </p>
+</div>
+
+
+This part connects foundations to the frontier. It starts with **Foundations for AI**: trustworthy systems require governed data, explicit semantics, lineage, and human-in-the-loop oversight. Generative tools add capability but increase the need for documented context, prompt/response traceability, and model risk management aligned to emerging standards.
+
+Next is **Data Management Maturity**. Digital maturity (features, adoption) is not the same as capability maturity (definitions, stewardship, quality, metadata, lifecycle). A practical maturity model lets organisations baseline where they are, prioritise gaps, and invest sequentially—often starting with stewardship, registries, and quality services that unlock downstream value faster than another app rollout.
+
+Finally, **The Cultural Shift**. Durable change is behavioural: moving from ownership to **stewardship**, from gatekeeping to **clarity**, and from individual heroics to **systematic improvement**. Leaders signal priorities by funding foundations, publishing definitions, and celebrating quality wins. Literacy matters too: clinicians and managers don’t need to be ontologists, but they do need shared language about meaning, quality and risk.
+
+The message is hopeful: with foundations in place, AI augments clinical judgment, analytics informs planning, and information flows safely through a governed ecosystem. Without them, every innovation amplifies inconsistency.

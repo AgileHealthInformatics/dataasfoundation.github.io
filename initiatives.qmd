@@ -1,0 +1,12 @@
+---
+title: "Initiatives"
+---
+
+## Active
+- **[Metadata Registry Blueprint]** – a reference model for NHS-scale registries.
+- **Practical Semantics Working Group** – community profiles & validation tools.
+
+## In development
+- **AI Assurance Patterns for Health** – governance recipes grounded in data foundations.
+
+*Interested in collaborating?* Get in touch.

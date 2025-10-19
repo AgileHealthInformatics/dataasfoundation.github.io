@@ -1,0 +1,21 @@
+---
+title: "Part IV — Building the Infrastructure"
+page-layout: article
+---
+<div class="book-cover-left">
+  <a href="https://amzn.eu/d/enJozBL" target="_blank">
+    <img src="../images/cover.png" alt="Data as Foundation book cover">
+  </a>
+  <p>
+    <a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+  </p>
+</div>
+
+
+Part IV turns principles into architecture. It reviews the **standards ecosystem**—terminologies, classifications, information models, and exchange specs—and explains why success depends less on picking a winner and more on **profiling, governance and tooling** that keep meaning intact across vendors and regions.
+
+At the centre is the case for **metadata registries**. A registry is not a passive catalogue; it’s an operational service that holds canonical definitions, value sets, constraints, mappings, ownership, and version history—then **drives** validation, integration and analytics. With a registry, teams resolve meaning questions once and reuse everywhere; without it, every project re-discovers the same ambiguities.
+
+The part also restores a neglected competency: **process documentation**. Data inherits meaning from workflow. If we can’t describe the process that created the data—actors, steps, controls, and intent—secondary use becomes hazardous. Healthcare-adapted BPM, clinical concept frameworks, and lightweight catalogs make processes inspectable by people and machines, enabling safer automation and AI.
+
+The architectural posture that emerges is modular and federated: local autonomy with shared semantics; profiles over pure theory; registries and process catalogs as the **connective tissue**; and implementation guides that specify “just enough” to be achievable by real NHS teams. It’s infrastructure you can actually build.

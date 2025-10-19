@@ -1,0 +1,13 @@
+---
+title: "Concepts"
+---
+
+This is the living, web-native companion to the book **Data as Foundation**.  
+Use it to explore:
+
+- **Data vs Information Governance** — why compliance isn’t capability.
+- **Metadata as the missing linchpin** — context that preserves meaning.
+- **Semantic interoperability in practice** — implementable semantics for real teams.
+- **Repurposing, not reuse** — moving data safely across contexts.
+
+> Have a question or want to propose a correction? Open an issue on GitHub or use the contact link in the footer.

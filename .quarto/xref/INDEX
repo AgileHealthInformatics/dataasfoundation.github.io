@@ -1,0 +1,41 @@
+{
+  "about.qmd": {
+    "about.html": "e0406031"
+  },
+  "events.qmd": {
+    "events.html": "7abcd950"
+  },
+  "index.qmd": {
+    "index.html": "745b8fd3"
+  },
+  "initiatives.qmd": {
+    "initiatives.html": "8c4bff90"
+  },
+  "posts/2025-05-29-looking-back.qmd": {
+    "2025-05-29-looking-back.html": "41960161"
+  },
+  "posts/index.qmd": {
+    "index.html": "49eaaf21"
+  },
+  "book/overview.qmd": {
+    "overview.html": "ed1cf50c"
+  },
+  "book/part1.qmd": {
+    "part1.html": "71ecc9ea"
+  },
+  "book/part2.qmd": {
+    "part2.html": "0edb9386"
+  },
+  "book/part3.qmd": {
+    "part3.html": "35606f68"
+  },
+  "book/part4.qmd": {
+    "part4.html": "4e619d3e"
+  },
+  "book/part5.qmd": {
+    "part5.html": "02b6118b"
+  },
+  "book/part6.qmd": {
+    "part6.html": "7bc5b16d"
+  }
+}

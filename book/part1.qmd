@@ -1,0 +1,24 @@
+---
+title: "Part I — The Healthcare Data Paradox"
+page-layout: article
+---
+<div class="book-cover-left">
+  <a href="https://amzn.eu/d/enJozBL" target="_blank">
+    <img src="../images/cover.png" alt="Data as Foundation book cover">
+  </a>
+  <p>
+    <a href="https://amzn.eu/d/enJozBL" target="_blank">Buy on Amazon</a>
+  </p>
+</div>
+
+
+Part I investigates why health systems repeatedly invest in digital programmes that promise transformation yet deliver only partial gains. The central claim is stark: **we optimised visible technology while neglecting the invisible foundation**—data governance, metadata, and shared semantics. The paradox is that we have standards, frameworks and budgets, yet meaning still fractures as information crosses organisational and system boundaries.
+
+The narrative starts with NHS history: departmental systems in the 1990s, the ambition of NPfIT, and later waves favouring local innovation. Each era improved tooling, but too often **assumed** that consistent, high-quality data would naturally follow. In practice, variation in coding, local extensions, and undocumented context created a brittleness that no amount of messaging middleware could fix. Technical interoperability advanced faster than **semantic** interoperability.
+
+The part names a persistent confusion: **information governance** (lawful, secure handling) is not **data governance** (stewardship of meaning, quality and lifecycle). Organisations passed audits yet struggled to use shared data safely because definitions, provenance and quality were unclear. COVID-era acceleration amplified this: where foundations existed, analytics and coordination flourished; where they didn’t, dashboards and decision support were hampered by inconsistency and missing context.
+
+A second thread is the **metadata gap**. Clinical terminologies (e.g., SNOMED CT), classifications and modern exchange standards are necessary but insufficient without operational metadata that records *how* data was captured, by whom, using what method, with which units and reference ranges. Without it, repurposing for research, quality, or AI becomes risky guesswork.
+
+Part I concludes with a call to action: treat data capability as distinct from digitisation. Establish senior data leadership; fund metadata infrastructure (registries, lineage, quality services); and measure **data management maturity** alongside system adoption. The lesson from decades of effort is not to spend less on digital—but to **sequence and govern** differently so technology sits on bedrock, not sand.
+
