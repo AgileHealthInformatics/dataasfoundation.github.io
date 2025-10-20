@@ -28,11 +28,13 @@ p {
 /* ---------- Layout Width ---------- */
 /* ===== Wider layout on large screens ===== */
 
-/* Let the outer containers stretch to the full viewport width */
+/* ==========================================================
+   Balanced wide-screen layout
+   ========================================================== */
+
+/* Let Quarto containers fill the viewport */
 .quarto-container,
 .container,
-.container-sm,
-.container-md,
 .container-lg,
 .container-xl,
 .container-xxl {
@@ -42,26 +44,32 @@ p {
   padding-right: 0;
 }
 
-/* Use up to 80% of the viewport for the main text area */
+/* Main content area */
 main.content,
 #quarto-document-content {
-  max-width: 80vw;          /* <- your 80% target */
+  max-width: 80vw;      /* target about 80% of viewport */
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 
-  /* keep space for the left-margin book cover */
-  padding-left: 250px;       /* adjust if you change cover width */
+  /* leave smaller space for the cover image */
+  padding-left: 180px;   /* was 250px */
   padding-right: 2rem;
 }
 
-/* On medium/small screens, relax to near full width */
+/* Adjust anchor so absolutely positioned cover sits tight to edge */
+.book-cover-left {
+  left: 1rem;            /* pull image closer to browser edge */
+}
+
+/* Responsive tweaks */
 @media (max-width: 1400px) {
   main.content,
   #quarto-document-content {
     max-width: 90vw;
     width: 90vw;
+    padding-left: 160px;
   }
 }
 
@@ -70,13 +78,22 @@ main.content,
   #quarto-document-content {
     max-width: 95vw;
     width: 95vw;
-    padding-left: 1rem;      /* image stacks above text on small screens */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
-}
 
-/* Ensure absolute positioning still anchors correctly */
-.page-columns { position: relative; }
+  .book-cover-left {
+    position: relative;
+    left: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .book-cover-left img {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
 
 
 /* ==========================================================
