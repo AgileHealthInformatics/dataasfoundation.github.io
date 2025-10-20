@@ -1,271 +1,162 @@
 /* ==========================================================
-   Data as Foundation - Book Cover Float Left Layout
+   Data as Foundation – Minimal, Layout-Safe CSS
+   (Body uses Quarto defaults; cover lives in right margin)
    ========================================================== */
 
 /* ---------- Base Typography ---------- */
-body { 
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.6;
-  color: var(--bs-body-color); 
-  background-color: var(--bs-body-bg); 
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
 }
 
-h1, h2, h3, h4 { 
-  font-weight: 600; 
+h1, h2, h3, h4 {
+  font-weight: 600;
   color: var(--bs-heading-color, var(--bs-body-color));
-  margin-top: 1.5rem; 
-  margin-bottom: 0.75rem; 
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
-p { 
-  margin-bottom: 1rem; 
-}
-
-.lead { 
-  font-size: 1.15rem; 
-}
+p { margin-bottom: 1rem; }
+.lead { font-size: 1.15rem; }
 
 /* ==========================================================
-   NAVBAR - Light/Dark Responsive
+   NAVBAR – Light/Dark Responsive
    ========================================================== */
-nav.navbar[data-bs-theme="dark"] { 
-  background-color: inherit !important; 
-  color: inherit !important; 
+
+/* Neutralise Quarto’s hard-coded dark attribute on <nav> */
+nav.navbar[data-bs-theme="dark"] {
+  background-color: inherit !important;
+  color: inherit !important;
 }
 
 /* Light mode */
-[data-bs-theme="light"] nav.navbar { 
-  background-color: #fff !important; 
+[data-bs-theme="light"] nav.navbar {
+  background-color: #ffffff !important;
   color: #0b3b46 !important;
-  border-bottom: 1px solid rgba(0,0,0,0.1); 
-  min-height: 60px; 
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  min-height: 60px;
 }
-
-[data-bs-theme="light"] .navbar .navbar-brand, 
+[data-bs-theme="light"] .navbar .navbar-brand,
 [data-bs-theme="light"] .navbar .nav-link {
-  color: #0b3b46 !important; 
-  font-weight: 600; 
+  color: #0b3b46 !important;
+  font-weight: 600;
 }
-
-[data-bs-theme="light"] .navbar .nav-link:hover, 
+[data-bs-theme="light"] .navbar .nav-link:hover,
 [data-bs-theme="light"] .navbar .nav-link:focus {
-  color: #005f73 !important; 
+  color: #005f73 !important;
 }
 
 /* Dark mode */
-[data-bs-theme="dark"] nav.navbar { 
-  background-color: #121212 !important; 
+[data-bs-theme="dark"] nav.navbar {
+  background-color: #121212 !important;
   color: #f8f9fa !important;
-  border-bottom: 1px solid #333; 
-  min-height: 60px; 
+  border-bottom: 1px solid #333;
+  min-height: 60px;
 }
-
-[data-bs-theme="dark"] .navbar .navbar-brand, 
+[data-bs-theme="dark"] .navbar .navbar-brand,
 [data-bs-theme="dark"] .navbar .nav-link {
-  color: #f8f9fa !important; 
-  font-weight: 600; 
-}
-
-[data-bs-theme="dark"] .navbar .nav-link:hover, 
-[data-bs-theme="dark"] .navbar .nav-link:focus {
-  color: #66b2ff !important; 
-}
-
-.navbar .container-fluid, 
-.navbar .navbar-container { 
-  min-height: 60px; 
-  align-items: center; 
-}
-
-/* ==========================================================
-   BOOK COVER - Float to the left of text
-   ========================================================== */
-.book-cover-left {
-  float: left;
-  margin-right: 2.5rem;
-  margin-bottom: 1.5rem;
-  margin-top: 0.5rem;
-  width: 200px;
-  text-align: center;
-  clear: left;
-}
-
-.book-cover-left img {
-  width: 100%;
-  max-width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: block;
-  margin: 0 auto;
-}
-
-.book-cover-left img:hover { 
-  transform: scale(1.05); 
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-.book-cover-left p { 
-  margin-top: 0.5rem; 
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--bs-secondary-color, var(--bs-body-color)); 
-}
-
-.book-cover-left a {
+  color: #f8f9fa !important;
   font-weight: 600;
 }
-
-/* ==========================================================
-   CONTENT LAYOUT - Ensure proper flow around book cover
-   ========================================================== */
-
-/* Make sure the title and content wrap around the floated book cover */
-.quarto-title-block {
-  overflow: auto; /* Contain floats */
+[data-bs-theme="dark"] .navbar .nav-link:hover,
+[data-bs-theme="dark"] .navbar .nav-link:focus {
+  color: #66b2ff !important;
 }
 
-/* Ensure paragraphs and headers flow around the book cover */
-main.content h1:first-of-type,
-main.content h2:first-of-type,
-#quarto-document-content h1:first-of-type,
-#quarto-document-content h2:first-of-type {
-  clear: none; /* Allow headers to sit next to book cover */
-}
-
-/* Ensure content after book cover flows properly */
-main.content > *,
-#quarto-document-content > * {
-  clear: none;
-}
-
-/* Add clearfix after main content sections to prevent float issues */
-main.content::after,
-#quarto-document-content::after,
-.quarto-title-block::after {
-  content: "";
-  display: table;
-  clear: both;
+/* Keep navbar height consistent */
+.navbar .container-fluid,
+.navbar .navbar-container {
+  min-height: 60px;
+  align-items: center;
 }
 
 /* ==========================================================
-   STICKY BOOK COVER - Alternative for longer pages
+   RIGHT-MARGIN COVER (above TOC)
    ========================================================== */
-   
-/* If you want the book cover to stick as you scroll, uncomment this section: */
-/*
-@media (min-width: 1200px) {
-  .book-cover-left {
-    position: sticky;
-    top: 100px;
-    float: left;
-  }
-}
-*/
-
-/* ==========================================================
-   RESPONSIVE DESIGN
-   ========================================================== */
-   
-/* Tablet view (768px - 991px) */
-@media (max-width: 991px) and (min-width: 768px) {
-  .book-cover-left {
-    width: 150px;
-    margin-right: 1.5rem;
-  }
-  
-  .book-cover-left img {
-    max-width: 140px;
-  }
+/* Place the cover block in the margin (you added it with .margin-content) */
+#cover.margin-content,
+.margin-content#cover {
+  display: block;
+  margin-bottom: 1.25rem;   /* space before TOC */
+  text-align: center;
 }
 
-/* Mobile view (< 768px) */
-@media (max-width: 767px) {
-  .book-cover-left {
-    float: none;
-    width: 100%;
-    margin: 1rem auto 2rem auto;
-    text-align: center;
+/* Image styling */
+#cover img {
+  width: 180px;             /* adjust if you prefer */
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+#cover img:hover { transform: scale(1.03); }
+
+/* Link under the image */
+#cover p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--bs-secondary-color, var(--bs-body-color));
+}
+
+/* On small screens the margin stack becomes inline content;
+   keep the cover centered and tidy there too */
+@media (max-width: 991px) {
+  #cover {
+    margin: 0 0 1rem 0;
   }
-  
-  .book-cover-left img {
-    width: 200px;
+  #cover img {
+    width: 55%;
     margin: 0 auto;
-    display: block;
   }
 }
 
 /* ==========================================================
-   LINKS - Theme Aware
+   LINKS – Theme Aware
    ========================================================== */
-a { 
-  color: var(--bs-link-color, #0b3b46); 
-  text-decoration: none; 
-  font-weight: 500; 
+a {
+  color: var(--bs-link-color, #0b3b46);
+  text-decoration: none;
+  font-weight: 500;
 }
-
-a:hover { 
-  color: var(--bs-link-hover-color, #005f73); 
-  text-decoration: underline; 
+a:hover {
+  color: var(--bs-link-hover-color, #005f73);
+  text-decoration: underline;
 }
-
-[data-bs-theme="dark"] a { 
-  color: #66b2ff; 
-}
-
-[data-bs-theme="dark"] a:hover { 
-  color: #a7d3ff; 
-}
+[data-bs-theme="dark"] a { color: #66b2ff; }
+[data-bs-theme="dark"] a:hover { color: #a7d3ff; }
 
 /* ==========================================================
    SUBTITLES
    ========================================================== */
-.quarto-title-block .quarto-subtitle, 
+.quarto-title-block .quarto-subtitle,
 .quarto-title .subtitle {
   color: var(--bs-secondary-color, var(--bs-body-color));
-  font-size: 1.15rem; 
+  font-size: 1.15rem;
   margin-top: 0.25rem;
 }
-
 [data-bs-theme="dark"] .quarto-title-block .quarto-subtitle,
-[data-bs-theme="dark"] .quarto-title .subtitle { 
-  color: #e9ecef; 
-  opacity: 0.95; 
+[data-bs-theme="dark"] .quarto-title .subtitle {
+  color: #e9ecef;
+  opacity: 0.95;
 }
 
 /* ==========================================================
    FOOTER
    ========================================================== */
-footer, 
-.page-footer {
-  font-size: 0.9rem; 
+footer, .page-footer {
+  font-size: 0.9rem;
   color: var(--bs-secondary-color, var(--bs-body-color));
   border-top: 1px solid var(--bs-border-color, #ddd);
-  padding-top: 0.75rem; 
+  padding-top: 0.75rem;
   margin-top: 2rem;
-  clear: both; /* Clear any floats above */
 }
-
-.page-footer a { 
-  color: var(--bs-link-color, #0b3b46); 
-}
-
-.page-footer a:hover { 
-  text-decoration: underline; 
-}
+.page-footer a { color: var(--bs-link-color, #0b3b46); }
+.page-footer a:hover { text-decoration: underline; }
 
 /* ==========================================================
    IMAGE DEFAULTS
    ========================================================== */
-img { 
-  max-width: 100%; 
-  height: auto; 
-  border: none; 
-}
-
-/* ==========================================================
-   TOC ADJUSTMENTS
-   ========================================================== */
-#quarto-margin-sidebar {
-  clear: right; /* Ensure TOC doesn't interfere with floated elements */
-}
+img { max-width: 100%; height: auto; border: none; }
