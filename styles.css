@@ -1,5 +1,5 @@
 /* ==========================================================
-   Data as Foundation – Full Site Styles (Light/Dark Safe)
+   Data as Foundation – Complete Stylesheet
    ========================================================== */
 
 /* ---------- Base Typography ---------- */
@@ -25,92 +25,22 @@ p {
   font-size: 1.15rem;
 }
 
-/* ---------- Layout Width ---------- */
-/* ===== Wider layout on large screens ===== */
-
 /* ==========================================================
-   Balanced wide-screen layout
+   NAVBAR – Light/Dark Responsive
    ========================================================== */
 
-/* Let Quarto containers fill the viewport */
-.quarto-container,
-.container,
-.container-lg,
-.container-xl,
-.container-xxl {
-  max-width: 100% !important;
-  width: 100% !important;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Main content area */
-main.content,
-#quarto-document-content {
-  max-width: 80vw;      /* target about 80% of viewport */
-  width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-
-  /* leave smaller space for the cover image */
-  padding-left: 180px;   /* was 250px */
-  padding-right: 2rem;
-}
-
-/* Adjust anchor so absolutely positioned cover sits tight to edge */
-.book-cover-left {
-  left: 1rem;            /* pull image closer to browser edge */
-}
-
-/* Responsive tweaks */
-@media (max-width: 1400px) {
-  main.content,
-  #quarto-document-content {
-    max-width: 90vw;
-    width: 90vw;
-    padding-left: 160px;
-  }
-}
-
-@media (max-width: 991px) {
-  main.content,
-  #quarto-document-content {
-    max-width: 95vw;
-    width: 95vw;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .book-cover-left {
-    position: relative;
-    left: 0;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .book-cover-left img {
-    width: 60%;
-    margin: 0 auto;
-  }
-}
-
-
-/* ==========================================================
-   Navbar – Fully Responsive Light/Dark Toggle
-   ========================================================== */
-
-/* Reset the hard-coded dark theme Quarto adds */
+/* Neutralise Quarto’s hard-coded dark attribute */
 nav.navbar[data-bs-theme="dark"] {
   background-color: inherit !important;
   color: inherit !important;
 }
 
-/* --- Light Mode --- */
+/* Light mode */
 [data-bs-theme="light"] nav.navbar {
   background-color: #ffffff !important;
   color: #0b3b46 !important;
   border-bottom: 1px solid rgba(0,0,0,0.1);
+  min-height: 60px;
 }
 
 [data-bs-theme="light"] .navbar .navbar-brand,
@@ -124,11 +54,12 @@ nav.navbar[data-bs-theme="dark"] {
   color: #005f73 !important;
 }
 
-/* --- Dark Mode --- */
+/* Dark mode */
 [data-bs-theme="dark"] nav.navbar {
   background-color: #121212 !important;
   color: #f8f9fa !important;
   border-bottom: 1px solid #333;
+  min-height: 60px;
 }
 
 [data-bs-theme="dark"] .navbar .navbar-brand,
@@ -142,26 +73,112 @@ nav.navbar[data-bs-theme="dark"] {
   color: #66b2ff !important;
 }
 
-/* Dropdowns */
-.dropdown-menu {
-  background-color: var(--bs-body-bg);
-  color: var(--bs-body-color);
-  border: 1px solid var(--bs-border-color);
-}
-
-.dropdown-item {
-  color: var(--bs-body-color);
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus,
-.dropdown-item.active {
-  background-color: var(--bs-tertiary-bg, rgba(0,0,0,0.05));
-  color: var(--bs-body-color);
+/* Keep navbar height consistent */
+.navbar .container-fluid,
+.navbar .navbar-container {
+  min-height: 60px;
+  align-items: center;
 }
 
 /* ==========================================================
-   Links – Theme-Aware
+   LAYOUT WIDTH – Wide-screen Optimised
+   ========================================================== */
+
+/* Make Quarto containers use full browser width */
+.quarto-container,
+.container,
+.container-lg,
+.container-xl,
+.container-xxl {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Main text content area */
+main.content,
+#quarto-document-content {
+  max-width: 80vw;        /* roughly 80% of viewport width */
+  width: 80vw;
+  margin-left: 0;          /* anchor to left edge */
+  margin-right: auto;
+  position: relative;
+
+  padding-left: 130px;     /* reduced space for cover */
+  padding-right: 2rem;
+}
+
+/* Ensure absolute positioning anchors correctly */
+.page-columns, main.content, #quarto-document-content {
+  position: relative;
+}
+
+/* Responsive behaviour */
+@media (max-width: 1400px) {
+  main.content,
+  #quarto-document-content {
+    max-width: 90vw;
+    width: 90vw;
+    padding-left: 110px;
+  }
+}
+
+@media (max-width: 991px) {
+  main.content,
+  #quarto-document-content {
+    max-width: 95vw;
+    width: 95vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ==========================================================
+   BOOK COVER – Left Margin
+   ========================================================== */
+.book-cover-left {
+  position: absolute;
+  top: 1.5rem;
+  left: 0.5rem;          /* close to browser edge */
+  z-index: 5;
+  text-align: center;
+}
+
+.book-cover-left img {
+  width: 180px;          /* slightly smaller for balance */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+
+.book-cover-left img:hover {
+  transform: scale(1.03);
+}
+
+.book-cover-left p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--bs-secondary-color, var(--bs-body-color));
+}
+
+/* Stack image above text on smaller screens */
+@media (max-width: 991px) {
+  .book-cover-left {
+    position: relative;
+    left: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .book-cover-left img {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================
+   LINKS – Theme Aware
    ========================================================== */
 a {
   color: var(--bs-link-color, #0b3b46);
@@ -182,15 +199,8 @@ a:hover {
   color: #a7d3ff;
 }
 
-/* Small caption text (Amazon link under cover) */
-.book-cover-left p,
-.home-book-cover p {
-  font-size: 0.9rem;
-  color: var(--bs-secondary-color, var(--bs-body-color));
-}
-
 /* ==========================================================
-   Subtitle Visibility
+   SUBTITLES
    ========================================================== */
 .quarto-title-block .quarto-subtitle,
 .quarto-title .subtitle {
@@ -206,79 +216,7 @@ a:hover {
 }
 
 /* ==========================================================
-   Book Cover – Left Margin
-   ========================================================== */
-.book-cover-left {
-  position: absolute;
-  top: 1.5rem;
-  left: 2rem;
-  z-index: 5;
-  text-align: center;
-}
-
-.book-cover-left img {
-  width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.25);
-  transition: transform 0.2s ease;
-}
-
-.book-cover-left img:hover {
-  transform: scale(1.03);
-}
-
-.book-cover-left p {
-  margin-top: 0.3rem;
-}
-
-/* Ensure absolute positioning anchors correctly in all Quarto layouts */
-main.content,
-#quarto-document-content,
-.page-columns {
-  position: relative;
-}
-
-/* Responsive behaviour: image stacks above text on small screens */
-@media (max-width: 991px) {
-  .book-cover-left {
-    position: relative;
-    left: 0;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .book-cover-left img {
-    width: 60%;
-    margin: 0 auto;
-  }
-
-  main.content {
-    padding-left: 1rem;
-  }
-}
-
-/* ==========================================================
-   Home Page Book Cover (if used separately)
-   ========================================================== */
-.home-book-cover {
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.home-book-cover img {
-  width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.25);
-  transition: transform 0.2s ease;
-}
-
-.home-book-cover img:hover {
-  transform: scale(1.03);
-}
-
-/* ==========================================================
-   Footer
+   FOOTER
    ========================================================== */
 footer, .page-footer {
   font-size: 0.9rem;
@@ -297,71 +235,10 @@ footer, .page-footer {
 }
 
 /* ==========================================================
-   Utility Grids
-   ========================================================== */
-.grid {
-  align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* ==========================================================
-   Image Defaults
+   IMAGE DEFAULTS
    ========================================================== */
 img {
   max-width: 100%;
   height: auto;
   border: none;
-}
-/* ==========================================================
-   FINAL FIX – Make navbar truly light/dark responsive
-   ========================================================== */
-
-/* 1.  Stop Bootstrap treating the nav as permanently dark  */
-nav.navbar[data-bs-theme="dark"] {
-  background-color: inherit !important;
-  color: inherit !important;
-}
-
-/* 2.  Light-mode navbar */
-[data-bs-theme="light"] nav.navbar {
-  background-color: #ffffff !important;     /* pure white bar  */
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  min-height: 60px;                         /* consistent height */
-}
-
-[data-bs-theme="light"] .navbar .navbar-brand,
-[data-bs-theme="light"] .navbar .nav-link {
-  color: #0b3b46 !important;
-  font-weight: 600;
-}
-
-[data-bs-theme="light"] .navbar .nav-link:hover,
-[data-bs-theme="light"] .navbar .nav-link:focus {
-  color: #005f73 !important;
-}
-
-/* 3.  Dark-mode navbar */
-[data-bs-theme="dark"] nav.navbar {
-  background-color: #121212 !important;     /* charcoal */
-  border-bottom: 1px solid #222;
-  min-height: 60px;
-}
-
-[data-bs-theme="dark"] .navbar .navbar-brand,
-[data-bs-theme="dark"] .navbar .nav-link {
-  color: #f8f9fa !important;
-  font-weight: 600;
-}
-
-[data-bs-theme="dark"] .navbar .nav-link:hover,
-[data-bs-theme="dark"] .navbar .nav-link:focus {
-  color: #66b2ff !important;
-}
-
-/* 4.  Ensure the container inside inherits height evenly */
-.navbar .container-fluid,
-.navbar .navbar-container {
-  min-height: 60px;
-  align-items: center;
 }
