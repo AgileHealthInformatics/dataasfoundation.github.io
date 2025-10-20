@@ -1,5 +1,5 @@
 /* ==========================================================
-   Data as Foundation - Clean Light/Dark Compatible Styles
+   Data as Foundation – Full Site Styles (Light/Dark Safe)
    ========================================================== */
 
 /* ---------- Base Typography ---------- */
@@ -17,15 +17,20 @@ h1, h2, h3, h4 {
   margin-bottom: 0.75rem;
 }
 
-p { margin-bottom: 1rem; }
-.lead { font-size: 1.15rem; }
+p {
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+}
 
 /* ---------- Layout Width ---------- */
 main.content {
   max-width: 80vw;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 250px;  /* space for left cover image */
+  padding-left: 250px; /* space for left book cover */
   padding-right: 2rem;
   position: relative;
 }
@@ -38,24 +43,27 @@ main.content {
   }
 }
 
-/* ---------- Navbar Styling ---------- */
+/* ==========================================================
+   Navbar – Fully Responsive Light/Dark Toggle
+   ========================================================== */
 
-/* Base navbar background and border */
-.navbar {
-  background-color: var(--bs-body-bg) !important;
-  border-bottom: 1px solid var(--bs-border-color, rgba(0,0,0,.1));
+/* Reset the hard-coded dark theme Quarto adds */
+nav.navbar[data-bs-theme="dark"] {
+  background-color: inherit !important;
+  color: inherit !important;
 }
 
-/* Brand title */
-.navbar .navbar-brand {
-  font-weight: 700;
-  text-decoration: none;
+/* --- Light Mode --- */
+[data-bs-theme="light"] nav.navbar {
+  background-color: #ffffff !important;
+  color: #0b3b46 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-/* Light theme brand and link colours */
 [data-bs-theme="light"] .navbar .navbar-brand,
 [data-bs-theme="light"] .navbar .nav-link {
   color: #0b3b46 !important;
+  font-weight: 600;
 }
 
 [data-bs-theme="light"] .navbar .nav-link:hover,
@@ -63,15 +71,17 @@ main.content {
   color: #005f73 !important;
 }
 
-/* Dark theme brand and link colours */
-[data-bs-theme="dark"] .navbar {
+/* --- Dark Mode --- */
+[data-bs-theme="dark"] nav.navbar {
   background-color: #121212 !important;
-  border-bottom-color: #222;
+  color: #f8f9fa !important;
+  border-bottom: 1px solid #333;
 }
 
 [data-bs-theme="dark"] .navbar .navbar-brand,
 [data-bs-theme="dark"] .navbar .nav-link {
   color: #f8f9fa !important;
+  font-weight: 600;
 }
 
 [data-bs-theme="dark"] .navbar .nav-link:hover,
@@ -97,7 +107,9 @@ main.content {
   color: var(--bs-body-color);
 }
 
-/* ---------- Links (including Amazon) ---------- */
+/* ==========================================================
+   Links – Theme-Aware
+   ========================================================== */
 a {
   color: var(--bs-link-color, #0b3b46);
   text-decoration: none;
@@ -117,19 +129,21 @@ a:hover {
   color: #a7d3ff;
 }
 
-/* Small caption text under cover image */
+/* Small caption text (Amazon link under cover) */
 .book-cover-left p,
 .home-book-cover p {
   font-size: 0.9rem;
   color: var(--bs-secondary-color, var(--bs-body-color));
 }
 
-/* ---------- Subtitle Visibility ---------- */
+/* ==========================================================
+   Subtitle Visibility
+   ========================================================== */
 .quarto-title-block .quarto-subtitle,
 .quarto-title .subtitle {
   color: var(--bs-secondary-color, var(--bs-body-color));
   font-size: 1.15rem;
-  margin-top: .25rem;
+  margin-top: 0.25rem;
 }
 
 [data-bs-theme="dark"] .quarto-title-block .quarto-subtitle,
@@ -138,7 +152,9 @@ a:hover {
   opacity: 0.95;
 }
 
-/* ---------- Book Cover (Left Margin) ---------- */
+/* ==========================================================
+   Book Cover – Left Margin
+   ========================================================== */
 .book-cover-left {
   position: absolute;
   top: 1.5rem;
@@ -154,11 +170,22 @@ a:hover {
   transition: transform 0.2s ease;
 }
 
-.book-cover-left img:hover { transform: scale(1.03); }
+.book-cover-left img:hover {
+  transform: scale(1.03);
+}
 
-.book-cover-left p { margin-top: 0.3rem; }
+.book-cover-left p {
+  margin-top: 0.3rem;
+}
 
-/* Responsive behaviour */
+/* Ensure absolute positioning anchors correctly in all Quarto layouts */
+main.content,
+#quarto-document-content,
+.page-columns {
+  position: relative;
+}
+
+/* Responsive behaviour: image stacks above text on small screens */
 @media (max-width: 991px) {
   .book-cover-left {
     position: relative;
@@ -177,7 +204,9 @@ a:hover {
   }
 }
 
-/* ---------- Home Page Cover (if needed) ---------- */
+/* ==========================================================
+   Home Page Book Cover (if used separately)
+   ========================================================== */
 .home-book-cover {
   text-align: center;
   margin-top: 2rem;
@@ -191,9 +220,13 @@ a:hover {
   transition: transform 0.2s ease;
 }
 
-.home-book-cover img:hover { transform: scale(1.03); }
+.home-book-cover img:hover {
+  transform: scale(1.03);
+}
 
-/* ---------- Footer ---------- */
+/* ==========================================================
+   Footer
+   ========================================================== */
 footer, .page-footer {
   font-size: 0.9rem;
   color: var(--bs-secondary-color, var(--bs-body-color));
@@ -210,14 +243,18 @@ footer, .page-footer {
   text-decoration: underline;
 }
 
-/* ---------- Utility Grids ---------- */
+/* ==========================================================
+   Utility Grids
+   ========================================================== */
 .grid {
   align-items: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-/* ---------- Image Defaults ---------- */
+/* ==========================================================
+   Image Defaults
+   ========================================================== */
 img {
   max-width: 100%;
   height: auto;
