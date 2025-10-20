@@ -260,3 +260,55 @@ img {
   height: auto;
   border: none;
 }
+/* ==========================================================
+   FINAL FIX – Make navbar truly light/dark responsive
+   ========================================================== */
+
+/* 1.  Stop Bootstrap treating the nav as permanently dark  */
+nav.navbar[data-bs-theme="dark"] {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/* 2.  Light-mode navbar */
+[data-bs-theme="light"] nav.navbar {
+  background-color: #ffffff !important;     /* pure white bar  */
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  min-height: 60px;                         /* consistent height */
+}
+
+[data-bs-theme="light"] .navbar .navbar-brand,
+[data-bs-theme="light"] .navbar .nav-link {
+  color: #0b3b46 !important;
+  font-weight: 600;
+}
+
+[data-bs-theme="light"] .navbar .nav-link:hover,
+[data-bs-theme="light"] .navbar .nav-link:focus {
+  color: #005f73 !important;
+}
+
+/* 3.  Dark-mode navbar */
+[data-bs-theme="dark"] nav.navbar {
+  background-color: #121212 !important;     /* charcoal */
+  border-bottom: 1px solid #222;
+  min-height: 60px;
+}
+
+[data-bs-theme="dark"] .navbar .navbar-brand,
+[data-bs-theme="dark"] .navbar .nav-link {
+  color: #f8f9fa !important;
+  font-weight: 600;
+}
+
+[data-bs-theme="dark"] .navbar .nav-link:hover,
+[data-bs-theme="dark"] .navbar .nav-link:focus {
+  color: #66b2ff !important;
+}
+
+/* 4.  Ensure the container inside inherits height evenly */
+.navbar .container-fluid,
+.navbar .navbar-container {
+  min-height: 60px;
+  align-items: center;
+}
