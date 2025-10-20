@@ -160,3 +160,22 @@ footer, .page-footer {
    IMAGE DEFAULTS
    ========================================================== */
 img { max-width: 100%; height: auto; border: none; }
+/* Right-margin cover styling */
+#cover.column-margin {
+  text-align: center;
+  margin-bottom: 1.25rem;  /* space before the TOC */
+}
+#cover.column-margin img {
+  width: 180px;            /* adjust to taste */
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+#cover.column-margin img:hover { transform: scale(1.03); }
+#cover.column-margin p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--bs-secondary-color, var(--bs-body-color));
+}
