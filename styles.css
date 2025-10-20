@@ -160,6 +160,7 @@ footer, .page-footer {
    IMAGE DEFAULTS
    ========================================================== */
 img { max-width: 100%; height: auto; border: none; }
+
 /* Right-margin cover styling */
 #cover.column-margin {
   text-align: center;
