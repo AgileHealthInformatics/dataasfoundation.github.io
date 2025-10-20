@@ -1,5 +1,5 @@
 /* ==========================================================
-   Data as Foundation - Corrected CSS Layout
+   Data as Foundation - Book Cover on Left Edge Layout
    ========================================================== */
 
 /* ---------- Base Typography ---------- */
@@ -78,15 +78,17 @@ nav.navbar[data-bs-theme="dark"] {
 }
 
 /* ==========================================================
-   BOOK COVER - Fixed left positioning
+   BOOK COVER - Fixed at left edge of screen
    ========================================================== */
 .book-cover-left {
   position: fixed;
-  left: 20px;
+  left: 0;  /* Flush with left edge */
   top: 100px; /* Below navbar */
-  width: 200px;
+  width: 220px;
   text-align: center;
   z-index: 10;
+  padding: 0 20px; /* Padding for the content inside */
+  background-color: var(--bs-body-bg); /* Match page background */
 }
 
 .book-cover-left img {
@@ -113,20 +115,30 @@ nav.navbar[data-bs-theme="dark"] {
 }
 
 /* ==========================================================
-   MAIN CONTENT AREA - Adjusted for book cover
+   PAGE LAYOUT - Content pushed right for book cover
    ========================================================== */
    
-/* Push main content to the right to make room for book cover */
-.quarto-container {
-  margin-left: 240px; /* Space for book cover (200px) + gap (40px) */
-  transition: margin-left 0.3s ease;
+/* Push entire page content to the right */
+body {
+  margin-left: 220px; /* Same as book cover width */
 }
 
-/* Ensure content doesn't get too wide */
+/* Reset navbar to full width */
+nav.navbar {
+  margin-left: -220px; /* Pull navbar back to left edge */
+  padding-left: 220px; /* Then pad content back */
+}
+
+/* Main content area */
+.quarto-container {
+  max-width: calc(100vw - 220px); /* Account for book cover space */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 main.content, 
 #quarto-document-content {
   max-width: 900px;
-  padding: 0 2rem;
 }
 
 /* TOC positioning */
@@ -136,6 +148,7 @@ main.content,
   align-self: start;
   max-height: calc(100vh - 120px);
   overflow-y: auto;
+  padding-right: 2rem;
 }
 
 /* ==========================================================
@@ -145,25 +158,37 @@ main.content,
 /* Tablet view (992px - 1199px) */
 @media (max-width: 1199px) {
   .book-cover-left {
-    width: 160px;
+    width: 180px;
+    padding: 0 15px;
   }
   
   .book-cover-left img {
-    max-width: 140px;
+    max-width: 150px;
+  }
+  
+  body {
+    margin-left: 180px;
+  }
+  
+  nav.navbar {
+    margin-left: -180px;
+    padding-left: 180px;
   }
   
   .quarto-container {
-    margin-left: 190px;
+    max-width: calc(100vw - 180px);
   }
 }
 
 /* Mobile view (< 992px) */
 @media (max-width: 991px) {
   .book-cover-left {
-    position: static;
+    position: relative;
+    left: auto;
+    top: auto;
     width: 100%;
-    margin: 1rem auto 2rem auto;
-    padding: 0;
+    padding: 1rem;
+    background-color: transparent;
   }
   
   .book-cover-left img {
@@ -172,19 +197,30 @@ main.content,
     display: block;
   }
   
-  .quarto-container {
+  body {
     margin-left: 0;
+  }
+  
+  nav.navbar {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  .quarto-container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   
   main.content, 
   #quarto-document-content {
     max-width: 100%;
-    padding: 0 1rem;
   }
   
   #quarto-margin-sidebar {
     position: static;
     margin-top: 2rem;
+    padding-right: 0;
   }
 }
 
@@ -256,29 +292,15 @@ img {
 }
 
 /* ==========================================================
-   Hide duplicate book covers if they appear in content
+   Special handling for home page vs book pages
    ========================================================== */
-main .book-cover-left,
-#quarto-document-content .book-cover-left {
+   
+/* For pages with book content, hide inline book covers since we show the fixed one */
+.book-cover-left:not(:first-of-type) {
   display: none;
 }
 
-/* Only show the fixed book cover on pages that aren't the home page */
-body:not(.home-page) .book-cover-left {
+/* Ensure the fixed book cover is visible */
+.book-cover-left:first-of-type {
   display: block;
-}
-
-/* For home page, show book cover inline */
-body.home-page main .book-cover-left,
-body.home-page #quarto-document-content .book-cover-left {
-  display: block;
-  position: static;
-  width: auto;
-  margin: 2rem 0;
-  float: left;
-  margin-right: 2rem;
-}
-
-body.home-page .quarto-container {
-  margin-left: 0;
 }
