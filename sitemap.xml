@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/posts/index.html</loc>
-    <lastmod>2025-10-19T15:38:37.032Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/initiatives.html</loc>
-    <lastmod>2025-10-19T15:38:37.002Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/events.html</loc>
-    <lastmod>2025-10-19T15:38:36.954Z</lastmod>
+    <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/index.html</loc>
+    <lastmod>2025-10-20T15:39:55.172Z</lastmod>
   </url>
   <url>
     <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/book/part5.html</loc>
@@ -23,10 +15,6 @@
   <url>
     <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/book/part1.html</loc>
     <lastmod>2025-10-20T15:39:36.115Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/about.html</loc>
-    <lastmod>2025-10-19T15:38:36.822Z</lastmod>
   </url>
   <url>
     <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/book/overview.html</loc>
@@ -43,13 +31,5 @@
   <url>
     <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/book/part6.html</loc>
     <lastmod>2025-10-20T15:31:01.732Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/index.html</loc>
-    <lastmod>2025-10-20T15:39:55.172Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AgileHealthInformatics.github.io/dataasfoundation.github.io/posts/2025-05-29-looking-back.html</loc>
-    <lastmod>2025-10-19T15:38:37.018Z</lastmod>
   </url>
 </urlset>

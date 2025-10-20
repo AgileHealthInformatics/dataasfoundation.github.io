@@ -1,38 +1,24 @@
 [
   {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Articles",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data as Foundation",
     "section": "",
-    "text": "No matching items"
+    "text": "Buy on Amazon"
   },
   {
-    "objectID": "initiatives.html",
-    "href": "initiatives.html",
-    "title": "Initiatives",
-    "section": "",
-    "text": "[Metadata Registry Blueprint] – a reference model for NHS-scale registries.\nPractical Semantics Working Group – community profiles & validation tools."
+    "objectID": "index.html#vision",
+    "href": "index.html#vision",
+    "title": "Data as Foundation",
+    "section": "Vision",
+    "text": "Vision\nTo create healthcare information systems that are transparent, interoperable, and continuously learning. Data as Foundation envisions a future where every clinical, operational, and research decision is grounded in trusted data — seamlessly connected through shared meaning, robust governance, and intelligent architecture that evolves with healthcare itself."
   },
   {
-    "objectID": "initiatives.html#active",
-    "href": "initiatives.html#active",
-    "title": "Initiatives",
-    "section": "",
-    "text": "[Metadata Registry Blueprint] – a reference model for NHS-scale registries.\nPractical Semantics Working Group – community profiles & validation tools."
-  },
-  {
-    "objectID": "initiatives.html#in-development",
-    "href": "initiatives.html#in-development",
-    "title": "Initiatives",
-    "section": "In development",
-    "text": "In development\n\nAI Assurance Patterns for Health – governance recipes grounded in data foundations.\n\nInterested in collaborating? Get in touch."
-  },
-  {
-    "objectID": "events.html",
-    "href": "events.html",
-    "title": "Events",
-    "section": "",
-    "text": "2025\n\nData as Foundation: Launch webinar — Date TBA\n\nBCS Health & Care talk — Title TBA\n\n\nWant me to speak at your event? Reach out via the footer contact link."
+    "objectID": "index.html#the-data-as-foundation-philosophy",
+    "href": "index.html#the-data-as-foundation-philosophy",
+    "title": "Data as Foundation",
+    "section": "The Data as Foundation Philosophy",
+    "text": "The Data as Foundation Philosophy\nData as Foundation is built on the belief that data is not a by-product of healthcare but its essential infrastructure. It proposes five interlocking principles.\n\nMeaning before technology: Shared semantics and metadata allow systems to change without losing understanding.\nGovernance as capability: Stewardship of data quality, provenance, and context ensures that information can be safely reused and repurposed.\nArchitecture as alignment: Enterprise architecture connects people, processes, and platforms around a coherent model of meaning rather than a single technology stack.\nMetadata as infrastructure: Registries and definitions provide the connective tissue linking data to its clinical and operational context.\nIntelligence through integrity: Trustworthy AI depends on trustworthy data — explainable, traceable, and grounded in evidence.\n\nTogether, these principles create an ecosystem where data flows confidently, decisions are transparent, and improvement becomes a property of the system itself."
   },
   {
     "objectID": "book/part5.html",
@@ -54,13 +40,6 @@
     "title": "Part I — The Healthcare Data Paradox",
     "section": "",
     "text": "Buy on Amazon\n\nPart I investigates why health systems repeatedly invest in digital programmes that promise transformation yet deliver only partial gains. The central claim is stark: we optimised visible technology while neglecting the invisible foundation—data governance, metadata, and shared semantics. The paradox is that we have standards, frameworks and budgets, yet meaning still fractures as information crosses organisational and system boundaries.\nThe narrative starts with NHS history: departmental systems in the 1990s, the ambition of NPfIT, and later waves favouring local innovation. Each era improved tooling, but too often assumed that consistent, high-quality data would naturally follow. In practice, variation in coding, local extensions, and undocumented context created a brittleness that no amount of messaging middleware could fix. Technical interoperability advanced faster than semantic interoperability.\nThe part names a persistent confusion: information governance (lawful, secure handling) is not data governance (stewardship of meaning, quality and lifecycle). Organisations passed audits yet struggled to use shared data safely because definitions, provenance and quality were unclear. COVID-era acceleration amplified this: where foundations existed, analytics and coordination flourished; where they didn’t, dashboards and decision support were hampered by inconsistency and missing context.\nA second thread is the metadata gap. Clinical terminologies (e.g., SNOMED CT), classifications and modern exchange standards are necessary but insufficient without operational metadata that records how data was captured, by whom, using what method, with which units and reference ranges. Without it, repurposing for research, quality, or AI becomes risky guesswork.\nPart I concludes with a call to action: treat data capability as distinct from digitisation. Establish senior data leadership; fund metadata infrastructure (registries, lineage, quality services); and measure data management maturity alongside system adoption. The lesson from decades of effort is not to spend less on digital—but to sequence and govern differently so technology sits on bedrock, not sand."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Concepts",
-    "section": "",
-    "text": "This is the living, web-native companion to the book Data as Foundation.\nUse it to explore:\n\nData vs Information Governance — why compliance isn’t capability.\nMetadata as the missing linchpin — context that preserves meaning.\nSemantic interoperability in practice — implementable semantics for real teams.\nRepurposing, not reuse — moving data safely across contexts.\n\n\nHave a question or want to propose a correction? Open an issue on GitHub or use the contact link in the footer."
   },
   {
     "objectID": "book/overview.html",
@@ -89,33 +68,5 @@
     "title": "Part VI — Case Studies & Implementation",
     "section": "",
     "text": "Buy on Amazon\n\n\nThe final part is deliberately practical. It extracts lessons from sectors that already treat data as infrastructure—statistics, supply chain, finance, digital government—and shows how healthcare can adapt their playbooks: common process models, registries of definitions, quality services, and federated governance that balances autonomy with coherence.\nIt then offers a maturity-based implementation approach. Start where foundations unlock the most value: clarify stewardship; stand up an enterprise glossary; implement a lightweight metadata registry for priority domains (e.g., medications, labs); add automated quality checks to pipelines; publish provenance with every dataset. Run short, instructive projects that create visible wins—such as a safer shared medications list or a reliable bed-capacity dashboard—while building reusable components.\nA shared-care-record pattern illustrates the method: profile standards; map local codes to shared value sets; document care processes; instrument quality monitors; and agree governance that outlives the project. The case studies emphasise change management: align incentives, bring clinicians into design, and measure outcomes that matter (errors avoided, time saved, decisions improved), not just interfaces built.\nThe part closes with future horizons: ecosystem-level governance, patient participation as data governors, and algorithmic assurance integrated into everyday operations. None of this requires waiting for perfect standards. It requires ownership of meaning, investment in metadata and quality, and disciplined, iterative delivery. That’s how health systems turn data into a strategic, trustworthy asset—one implementation at a time."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data as Foundation",
-    "section": "",
-    "text": "Buy on Amazon"
-  },
-  {
-    "objectID": "index.html#vision",
-    "href": "index.html#vision",
-    "title": "Data as Foundation",
-    "section": "Vision",
-    "text": "Vision\nTo create healthcare information systems that are transparent, interoperable, and continuously learning. Data as Foundation envisions a future where every clinical, operational, and research decision is grounded in trusted data — seamlessly connected through shared meaning, robust governance, and intelligent architecture that evolves with healthcare itself."
-  },
-  {
-    "objectID": "index.html#the-data-as-foundation-philosophy",
-    "href": "index.html#the-data-as-foundation-philosophy",
-    "title": "Data as Foundation",
-    "section": "The Data as Foundation Philosophy",
-    "text": "The Data as Foundation Philosophy\nData as Foundation is built on the belief that data is not a by-product of healthcare but its essential infrastructure. It proposes five interlocking principles.\n\nMeaning before technology: Shared semantics and metadata allow systems to change without losing understanding.\nGovernance as capability: Stewardship of data quality, provenance, and context ensures that information can be safely reused and repurposed.\nArchitecture as alignment: Enterprise architecture connects people, processes, and platforms around a coherent model of meaning rather than a single technology stack.\nMetadata as infrastructure: Registries and definitions provide the connective tissue linking data to its clinical and operational context.\nIntelligence through integrity: Trustworthy AI depends on trustworthy data — explainable, traceable, and grounded in evidence.\n\nTogether, these principles create an ecosystem where data flows confidently, decisions are transparent, and improvement becomes a property of the system itself."
-  },
-  {
-    "objectID": "posts/2025-05-29-looking-back.html",
-    "href": "posts/2025-05-29-looking-back.html",
-    "title": "Looking Back: From Dyeline to Digital",
-    "section": "",
-    "text": "A story about the first seeds of information architecture on a construction site—and how those lessons map to health IT today."
   }
 ]
