@@ -1,5 +1,5 @@
 /* ==========================================================
-   Data as Foundation - Book Cover on Left Edge Layout
+   Data as Foundation - Book Cover Float Left Layout
    ========================================================== */
 
 /* ---------- Base Typography ---------- */
@@ -78,17 +78,16 @@ nav.navbar[data-bs-theme="dark"] {
 }
 
 /* ==========================================================
-   BOOK COVER - Fixed at left edge of screen
+   BOOK COVER - Float to the left of text
    ========================================================== */
 .book-cover-left {
-  position: fixed;
-  left: 0;  /* Flush with left edge */
-  top: 100px; /* Below navbar */
-  width: 220px;
+  float: left;
+  margin-right: 2.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  width: 200px;
   text-align: center;
-  z-index: 10;
-  padding: 0 20px; /* Padding for the content inside */
-  background-color: var(--bs-body-bg); /* Match page background */
+  clear: left;
 }
 
 .book-cover-left img {
@@ -97,6 +96,8 @@ nav.navbar[data-bs-theme="dark"] {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
+  margin: 0 auto;
 }
 
 .book-cover-left img:hover { 
@@ -106,6 +107,7 @@ nav.navbar[data-bs-theme="dark"] {
 
 .book-cover-left p { 
   margin-top: 0.5rem; 
+  margin-bottom: 0.5rem;
   font-size: 0.9rem;
   color: var(--bs-secondary-color, var(--bs-body-color)); 
 }
@@ -115,112 +117,81 @@ nav.navbar[data-bs-theme="dark"] {
 }
 
 /* ==========================================================
-   PAGE LAYOUT - Content pushed right for book cover
+   CONTENT LAYOUT - Ensure proper flow around book cover
+   ========================================================== */
+
+/* Make sure the title and content wrap around the floated book cover */
+.quarto-title-block {
+  overflow: auto; /* Contain floats */
+}
+
+/* Ensure paragraphs and headers flow around the book cover */
+main.content h1:first-of-type,
+main.content h2:first-of-type,
+#quarto-document-content h1:first-of-type,
+#quarto-document-content h2:first-of-type {
+  clear: none; /* Allow headers to sit next to book cover */
+}
+
+/* Ensure content after book cover flows properly */
+main.content > *,
+#quarto-document-content > * {
+  clear: none;
+}
+
+/* Add clearfix after main content sections to prevent float issues */
+main.content::after,
+#quarto-document-content::after,
+.quarto-title-block::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ==========================================================
+   STICKY BOOK COVER - Alternative for longer pages
    ========================================================== */
    
-/* Push entire page content to the right */
-body {
-  margin-left: 220px; /* Same as book cover width */
+/* If you want the book cover to stick as you scroll, uncomment this section: */
+/*
+@media (min-width: 1200px) {
+  .book-cover-left {
+    position: sticky;
+    top: 100px;
+    float: left;
+  }
 }
-
-/* Reset navbar to full width */
-nav.navbar {
-  margin-left: -220px; /* Pull navbar back to left edge */
-  padding-left: 220px; /* Then pad content back */
-}
-
-/* Main content area */
-.quarto-container {
-  max-width: calc(100vw - 220px); /* Account for book cover space */
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-main.content, 
-#quarto-document-content {
-  max-width: 900px;
-}
-
-/* TOC positioning */
-#quarto-margin-sidebar {
-  position: sticky;
-  top: 100px;
-  align-self: start;
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-  padding-right: 2rem;
-}
+*/
 
 /* ==========================================================
    RESPONSIVE DESIGN
    ========================================================== */
    
-/* Tablet view (992px - 1199px) */
-@media (max-width: 1199px) {
+/* Tablet view (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
   .book-cover-left {
-    width: 180px;
-    padding: 0 15px;
+    width: 150px;
+    margin-right: 1.5rem;
   }
   
   .book-cover-left img {
-    max-width: 150px;
-  }
-  
-  body {
-    margin-left: 180px;
-  }
-  
-  nav.navbar {
-    margin-left: -180px;
-    padding-left: 180px;
-  }
-  
-  .quarto-container {
-    max-width: calc(100vw - 180px);
+    max-width: 140px;
   }
 }
 
-/* Mobile view (< 992px) */
-@media (max-width: 991px) {
+/* Mobile view (< 768px) */
+@media (max-width: 767px) {
   .book-cover-left {
-    position: relative;
-    left: auto;
-    top: auto;
+    float: none;
     width: 100%;
-    padding: 1rem;
-    background-color: transparent;
+    margin: 1rem auto 2rem auto;
+    text-align: center;
   }
   
   .book-cover-left img {
     width: 200px;
     margin: 0 auto;
     display: block;
-  }
-  
-  body {
-    margin-left: 0;
-  }
-  
-  nav.navbar {
-    margin-left: 0;
-    padding-left: 0;
-  }
-  
-  .quarto-container {
-    max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  main.content, 
-  #quarto-document-content {
-    max-width: 100%;
-  }
-  
-  #quarto-margin-sidebar {
-    position: static;
-    margin-top: 2rem;
-    padding-right: 0;
   }
 }
 
@@ -272,6 +243,7 @@ footer,
   border-top: 1px solid var(--bs-border-color, #ddd);
   padding-top: 0.75rem; 
   margin-top: 2rem;
+  clear: both; /* Clear any floats above */
 }
 
 .page-footer a { 
@@ -292,15 +264,8 @@ img {
 }
 
 /* ==========================================================
-   Special handling for home page vs book pages
+   TOC ADJUSTMENTS
    ========================================================== */
-   
-/* For pages with book content, hide inline book covers since we show the fixed one */
-.book-cover-left:not(:first-of-type) {
-  display: none;
-}
-
-/* Ensure the fixed book cover is visible */
-.book-cover-left:first-of-type {
-  display: block;
+#quarto-margin-sidebar {
+  clear: right; /* Ensure TOC doesn't interfere with floated elements */
 }
